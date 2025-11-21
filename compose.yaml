@@ -1,0 +1,7 @@
+name: temperaturer-etl
+services:
+  app:
+    build: ./datainnsamler   # bygger Dockerfile i denne mappen
+    volumes:
+      - ./data:/data         # lokal mappe monteres som /data i containeren
+
