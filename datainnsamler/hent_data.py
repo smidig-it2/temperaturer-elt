@@ -64,8 +64,10 @@ def main():
         rader.append((tid, temp))
 
     # Skriv CSV-fil
+    # newline="" skrur av automatisk linjeskift-konvertering i Python
+    # lineterminator="\n" tvinger LF på alle plattformer for konsistens
     with OUTFILE.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["tid", "temperatur"])
         writer.writerows(rader)
 
