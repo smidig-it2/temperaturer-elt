@@ -1,7 +1,16 @@
 name: temperaturer-etl
-services:
-  app:
-    build: ./datainnsamler   # bygger Dockerfile i denne mappen
-    volumes:
-      - ./data:/data         # lokal mappe monteres som /data i containeren
 
+services:
+  datainnsamler:
+    build: ./datainnsamler
+    volumes:
+      - ./data:/data
+
+  databehandler:
+    build: ./databehandler
+    volumes:
+      - ./data:/data
+    depends_on:
+      - datainnsamler
+
+# Smidig IT-2 © TIP AS, 2025
