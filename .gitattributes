@@ -1,13 +1,20 @@
 * text=auto
 
-# All kode skal ha LF i repoet
-*.sh      text eol=lf
-*.py      text eol=lf
-*.yaml    text eol=lf
-*.yml     text eol=lf
-Dockerfile text eol=lf
+# All kode og tekstfiler skal ha LF i repoet
+*.sh        text eol=lf
+*.py        text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.go        text eol=lf
+go.mod      text eol=lf
+go.sum      text eol=lf
+Dockerfile  text eol=lf
+
+# Dokumentfiler
+*.md        text eol=lf
+LICENSE     text eol=lf
 
 # Windows-spesifikt kan gjerne være CRLF
-*.bat     text eol=crlf
-*.cmd     text eol=crlf
-*.ps1     text eol=crlf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+*.ps1      text eol=crlf
