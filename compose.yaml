@@ -1,0 +1,27 @@
+name: temperaturer-etl
+
+services:
+  datainnsamler:
+    build: ./datainnsamler
+    volumes:
+      - ./data:/data
+
+  databehandler:
+    build: ./databehandler
+    volumes:
+      - ./data:/data
+    depends_on:
+      datainnsamler:
+        condition: service_completed_successfully
+
+  web:
+    build: ./web
+    ports:
+      - "8080:80"            # nås på http://localhost:8080
+    volumes:
+      - ./data:/usr/share/nginx/html/data:ro
+    depends_on:
+      databehandler:
+        condition: service_completed_successfully
+
+# Smidig IT-2 © TIP AS, 2025

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Daglige gjennomsnittstemperaturer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Henter Chart.js fra CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 2rem;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    #chart-container {
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prognose for daglige gjennomsnittstemperaturer</h1>
+  <p>Lokasjon: Mysen (59.55, 11.33)</p>
+  <p>Dataene hentes i <code>Python</code>,
+     beregnes i <code>Go</code> og
+     leveres av en webserver til nettsiden.
+     <code>Chart.js</code> tegner grafen på et canvas-element.</p>
+
+  <div id="chart-container">
+    <canvas id="tempChart"></canvas>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
